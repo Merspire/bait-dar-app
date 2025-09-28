@@ -6,6 +6,7 @@ import { PropertyCard, Property } from "@/components/PropertyCard";
 import { Badge } from "@/components/ui/badge";
 import { Users, Award, MapPin, Clock } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
+import logoImage from "@/assets/logo.png";
 
 const languages: Language[] = [
   { code: 'ar', name: 'العربية', flag: '🇪🇬' },
@@ -135,12 +136,14 @@ const Index = () => {
       <header className="border-b bg-card/50 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-gradient-hero rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">E</span>
-              </div>
+            <div className="flex items-center gap-3">
+              <img 
+                src={logoImage} 
+                alt="عقار لينك" 
+                className="w-12 h-12 rounded-full"
+              />
               <span className="text-xl font-bold text-gradient">
-                {getText('عقاري', 'EstateReserve')}
+                {getText('عقار لينك', 'Aqar Link')}
               </span>
             </div>
             
@@ -268,12 +271,14 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
-                  <span className="text-accent-foreground font-bold">E</span>
-                </div>
+              <div className="flex items-center gap-3 mb-4">
+                <img 
+                  src={logoImage} 
+                  alt="عقار لينك" 
+                  className="w-10 h-10 rounded-full"
+                />
                 <span className="text-xl font-bold">
-                  {getText('عقاري', 'EstateReserve')}
+                  {getText('عقار لينك', 'Aqar Link')}
                 </span>
               </div>
               <p className="opacity-90">
@@ -315,7 +320,7 @@ const Index = () => {
           </div>
           
           <div className="border-t border-primary-foreground/20 mt-12 pt-8 text-center opacity-90">
-            <p>&copy; 2024 {getText('عقاري', 'EstateReserve')}. {getText('جميع الحقوق محفوظة', 'All rights reserved')}.</p>
+            <p>&copy; 2024 {getText('عقار لينك', 'Aqar Link')}. {getText('جميع الحقوق محفوظة', 'All rights reserved')}.</p>
           </div>
         </div>
       </footer>
