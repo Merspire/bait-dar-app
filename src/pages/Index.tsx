@@ -5,8 +5,8 @@ import { SearchFilters } from "@/components/SearchFilters";
 import { PropertyCard, Property } from "@/components/PropertyCard";
 import { Badge } from "@/components/ui/badge";
 import { Users, Award, MapPin, Clock } from "lucide-react";
-import heroImage from "@/assets/hero-image.jpg";
 import logoImage from "@/assets/logo.png";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const languages: Language[] = [
   { code: 'ar', name: 'العربية', flag: '🇪🇬' },
@@ -180,7 +180,7 @@ const Index = () => {
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroImage})` }}
+          style={{ backgroundImage: `url(${heroBg})` }}
         />
         <div className="absolute inset-0 bg-gradient-overlay" />
         
