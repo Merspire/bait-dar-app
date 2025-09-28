@@ -3,6 +3,11 @@ import { Button } from "@/components/ui/button";
 import { LanguageSwitcher, Language } from "@/components/ui/language-switcher";
 import { SearchFilters } from "@/components/SearchFilters";
 import { PropertyCard, Property } from "@/components/PropertyCard";
+import { CompoundsGuide } from "@/components/CompoundsGuide";
+import { ServicesSection } from "@/components/ServicesSection";
+import { PopularAreas } from "@/components/PopularAreas";
+import { MobileAppBanner } from "@/components/MobileAppBanner";
+import { ProfessionalServices } from "@/components/ProfessionalServices";
 import { Badge } from "@/components/ui/badge";
 import { Users, Award, MapPin, Clock } from "lucide-react";
 import logoImage from "@/assets/logo.png";
@@ -265,6 +270,21 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Mobile App Banner */}
+      <MobileAppBanner language={currentLanguage.code as 'ar' | 'en'} />
+
+      {/* Compounds Guide */}
+      <CompoundsGuide language={currentLanguage.code as 'ar' | 'en'} />
+
+      {/* Professional Services */}
+      <ProfessionalServices language={currentLanguage.code as 'ar' | 'en'} />
+
+      {/* Services Section */}
+      <ServicesSection language={currentLanguage.code as 'ar' | 'en'} />
+
+      {/* Popular Areas */}
+      <PopularAreas language={currentLanguage.code as 'ar' | 'en'} />
 
       {/* Footer */}
       <footer className="bg-primary text-primary-foreground py-16">
