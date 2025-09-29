@@ -6,7 +6,7 @@ import { PropertyCard, Property } from "@/components/PropertyCard";
 import { CompoundsGuide } from "@/components/CompoundsGuide";
 import { ServicesSection } from "@/components/ServicesSection";
 import { PopularAreas } from "@/components/PopularAreas";
-import { MobileAppBanner } from "@/components/MobileAppBanner";
+
 import { ProfessionalServices } from "@/components/ProfessionalServices";
 import { Badge } from "@/components/ui/badge";
 import { Users, Award, MapPin, Clock } from "lucide-react";
@@ -271,8 +271,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Mobile App Banner */}
-      <MobileAppBanner language={currentLanguage.code as 'ar' | 'en'} />
 
       {/* Compounds Guide */}
       <CompoundsGuide language={currentLanguage.code as 'ar' | 'en'} />
