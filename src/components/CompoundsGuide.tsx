@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface Developer {
   id: string;
@@ -147,14 +148,16 @@ export const CompoundsGuide = ({ language }: CompoundsGuideProps) => {
               {getText('اكتشف أفضل المطورين والشركات العقارية المتاحة', 'Discover the best developers and real estate companies available')}
             </p>
           </div>
-          <Button variant="outline" className="gap-2">
-            {getText('أظهر المزيد', 'Show More')}
-            <ArrowIcon className="h-4 w-4" />
-          </Button>
+          <Link to="/developers">
+            <Button variant="outline" className="gap-2">
+              {getText('عرض جميع المطورين', 'Show All Developers')}
+              <ArrowIcon className="h-4 w-4" />
+            </Button>
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {mockDevelopers.map((developer) => (
+          {mockDevelopers.slice(0, 4).map((developer) => (
             <Card key={developer.id} className="overflow-hidden hover:shadow-elegant transition-smooth group">
               <div className="relative">
                 <img 
