@@ -307,8 +307,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Compounds Guide */}
-      <CompoundsGuide language={currentLanguage.code as "ar" | "en"} />
+      {/* Developers Guide */}
+      <CompoundsGuide language={currentLanguage.code as 'ar' | 'en'} />
 
       {/* Professional Services */}
       <ProfessionalServices language={currentLanguage.code as "ar" | "en"} />

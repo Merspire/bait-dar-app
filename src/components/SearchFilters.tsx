@@ -22,6 +22,7 @@ export interface SearchFilters {
   minPrice: string;
   maxPrice: string;
   bedrooms: string;
+  developer: string;
 }
 
 export const SearchFilters = ({ language, onSearch }: SearchFiltersProps) => {
@@ -38,11 +39,23 @@ export const SearchFilters = ({ language, onSearch }: SearchFiltersProps) => {
   ];
 
   const bedroomOptions = [
-    { value: "1", label: "1" },
-    { value: "2", label: "2" },
-    { value: "3", label: "3" },
-    { value: "4", label: "4" },
-    { value: "5+", label: "5+" },
+    { value: '1', label: '1' },
+    { value: '2', label: '2' },
+    { value: '3', label: '3' },
+    { value: '4', label: '4' },
+    { value: '5+', label: '5+' },
+  ];
+
+  const developers = [
+    { value: 'palm-hills', arLabel: 'بالم هيلز', enLabel: 'Palm Hills' },
+    { value: 'al-ahly-sabbour', arLabel: 'الأهلي صبور', enLabel: 'Al Ahly Sabbour' },
+    { value: 'sodic', arLabel: 'سوديك', enLabel: 'SODIC' },
+    { value: 'emaar-misr', arLabel: 'إعمار مصر', enLabel: 'Emaar Misr' },
+    { value: 'misr-italia', arLabel: 'مصر إيطاليا', enLabel: 'Misr Italia Properties' },
+    { value: 'tmg', arLabel: 'طلعت مصطفى', enLabel: 'TMG - Talaat Moustafa Group' },
+    { value: 'mountain-view', arLabel: 'ماونتن فيو', enLabel: 'Mountain View' },
+    { value: 'la-vista', arLabel: 'لافيستا', enLabel: 'La Vista Developments' },
+    { value: 'hassan-allam', arLabel: 'حسن علام', enLabel: 'Hassan Allam Properties' },
   ];
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -50,12 +63,13 @@ export const SearchFilters = ({ language, onSearch }: SearchFiltersProps) => {
     const formData = new FormData(e.currentTarget);
 
     const filters: SearchFilters = {
-      location: (formData.get("location") as string) || "",
-      propertyType: (formData.get("propertyType") as string) || "",
-      listingType: (formData.get("listingType") as "sale" | "rent") || "",
-      minPrice: (formData.get("minPrice") as string) || "",
-      maxPrice: (formData.get("maxPrice") as string) || "",
-      bedrooms: (formData.get("bedrooms") as string) || "",
+      location: formData.get('location') as string || '',
+      propertyType: formData.get('propertyType') as string || '',
+      listingType: formData.get('listingType') as 'sale' | 'rent' || '',
+      minPrice: formData.get('minPrice') as string || '',
+      maxPrice: formData.get('maxPrice') as string || '',
+      bedrooms: formData.get('bedrooms') as string || '',
+      developer: formData.get('developer') as string || '',
     };
 
     onSearch?.(filters);
@@ -133,7 +147,7 @@ export const SearchFilters = ({ language, onSearch }: SearchFiltersProps) => {
           </div>
 
           {/* Advanced Filters Row */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 border-t">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 pt-4 border-t">
             {/* Price Range */}
             <div className="grid grid-cols-2 gap-2">
               <div className="relative">
@@ -193,6 +207,22 @@ export const SearchFilters = ({ language, onSearch }: SearchFiltersProps) => {
                 placeholder={getText("المساحة (م²)", "Area (m²)")}
                 className={`${isRTL ? "pr-10" : "pl-10"} transition-smooth`}
               />
+            </div>
+
+            {/* Developer */}
+            <div>
+              <Select name="developer">
+                <SelectTrigger className="transition-smooth">
+                  <SelectValue placeholder={getText('المطور', 'Developer')} />
+                </SelectTrigger>
+                <SelectContent>
+                  {developers.map((developer) => (
+                    <SelectItem key={developer.value} value={developer.value}>
+                      {getText(developer.arLabel, developer.enLabel)}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
           </div>
         </form>
