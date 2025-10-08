@@ -89,10 +89,10 @@ export const CompoundsGuide = ({ language }: CompoundsGuideProps) => {
         <div className="flex items-center justify-between mb-8">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              {getText('دليل الكمبوندات', 'Compounds Guide')}
+              {getText('دليل المطورين', 'Developers Guide')}
             </h2>
             <p className="text-muted-foreground">
-              {getText('اكتشف أفضل الكمبوندات والمشاريع السكنية المتاحة', 'Discover the best compounds and residential projects available')}
+              {getText('اكتشف أفضل المطورين والشركات العقارية المتاحة', 'Discover the best developers and real estate companies available')}
             </p>
           </div>
           <Button variant="outline" className="gap-2">

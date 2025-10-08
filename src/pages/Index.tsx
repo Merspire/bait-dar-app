@@ -272,7 +272,7 @@ const Index = () => {
       </section>
 
 
-      {/* Compounds Guide */}
+      {/* Developers Guide */}
       <CompoundsGuide language={currentLanguage.code as 'ar' | 'en'} />
 
       {/* Professional Services */}
