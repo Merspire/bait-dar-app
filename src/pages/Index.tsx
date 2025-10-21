@@ -308,7 +308,7 @@ const Index = () => {
       </section>
 
       {/* Developers Guide */}
-      <CompoundsGuide language={currentLanguage.code as 'ar' | 'en'} />
+      <CompoundsGuide language={currentLanguage.code as "ar" | "en"} />
 
       {/* Professional Services */}
       <ProfessionalServices language={currentLanguage.code as "ar" | "en"} />
@@ -405,7 +405,7 @@ const Index = () => {
               <div className="space-y-2 opacity-90">
                 <p>📧 info@estatereserve.com</p>
                 <p>📞 +20 123 456 7890</p>
-                <p>📍 {getText("القاهرة، مصر", "Cairo, Egypt")}</p>
+                <p>📍 {getText("أسيوط، مصر", "Cairo, Egypt")}</p>
               </div>
             </div>
           </div>
